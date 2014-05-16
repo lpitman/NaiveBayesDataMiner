@@ -1,0 +1,9 @@
+outlook temperature humidity windy class
+rain      mild      normal   false   p
+sunny     mild      normal   true    p 
+overcast  mild       high    true    p
+overcast  hot       normal   false   p
+sunny     mild       high    false   n
+overcast  cool      normal   true    n
+sunny     mild       high    false   n
+sunny     cool      normal   false   p

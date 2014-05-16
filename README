@@ -1,0 +1,68 @@
+README - Naive Bayes Classification
+-----------------------------------
+
+This program implements the Naive Bayes classification mining algorithm in Java.
+
+The code consists of the following Java files:
+	NaiveBayesClassifier.java	-	main(), loadDB(), calcProbabilities(), 
+															mEstimate(), prediction()
+	AVList.java 							- AVList(), add(), setUniqueValues), 
+															getUniqueValues(), getUniqueCount(), addVCPair(), getAttribute(), 
+															getValueCount(), getProbOfValueClass()
+ 	DataBase.java							- DataBase(), getAttribute(), getDBRows(), 
+															addRow(), getData(), probability(), 
+															numRowsWithValue(), getRowsWithValue(), 
+															allMatchClass(), getIndexOfAttribute()
+	Target.java								- Target(), addClass(), addProbability(), 
+															getAttribute(), getAttribute(), 
+															getProbability(), getClassList()
+	ValueClassPair.java				- ValueClassPair(), getProbability(), getValue(),
+															getTargetClass()
+															
+Program Structure:
+
+	main()---->loadDB
+	
+				---->getUniqueValues
+				
+				---->addClass
+				
+				---->getValueCount
+				
+				---->addProbability
+				
+				---->calcProbabilities
+								---->probability
+								---->mEstimate
+												---->getUniqueCount
+												---->numRowsWithValue
+											
+				---->addVCPair
+				
+				---->loadDB
+				
+				---->prediction
+								---->getDBRows
+								---->getClassList
+								---->getProbability
+								---->getProbOfValueClass
+
+Run the program:
+	bluenose: make
+	bluenose: java NaiveBayesClassifier
+	
+The result is stored in the file Result, to view the result:                         
+  bluenose: more Result
+	
+Data pruning:
+	File: data2
+	removing these lines, class should match:
+	overcast  hot        high    false   p
+	overcast  hot        high    false   n
+	
+	rain      cool      normal   true    p
+	rain      cool      normal   true    n
+	
+	removing these lines as they are inconsistent:
+	overcast  cool      normal   true    p
+	
